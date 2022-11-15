@@ -1,9 +1,8 @@
 import random
+import string
 
 def get_random_password(n = 8) -> str:
-    list_ = ''.join([chr(i) for i in range(ord('A'), ord('Z') + 1)]
-                    + [chr(i) for i in range(ord('a'), ord('z') + 1)]
-                    + [str(x) for x in range(0, 10)])
+    list_ = string.ascii_letters + string.digits
     return ''.join(random.sample(list_, 8))
 
 
